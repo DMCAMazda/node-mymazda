@@ -1,0 +1,35 @@
+export default class SystemInfo {
+    private screenHeight?;
+    private screenWidth?;
+    private batteryCharging?;
+    private batteryLevel?;
+    private orientation?;
+    private language?;
+    private androidVersion?;
+    private rotationLock?;
+    private buildModel?;
+    private buildBootloader?;
+    private buildHardware?;
+    private packageName?;
+    private androidId?;
+    private keyboard?;
+    private adbEnabled?;
+    private buildVersionCodename?;
+    private buildVersionIncremental?;
+    private buildVersionSDK?;
+    private buildManufacturer?;
+    private buildProduct?;
+    private buildTags?;
+    private buildType?;
+    private buildUser?;
+    private buildDisplay?;
+    private buildBoard?;
+    private buildBrand?;
+    private buildDevice?;
+    private buildFingerprint?;
+    private buildHost?;
+    private buildID?;
+    randomize(): void;
+    toString(): string;
+    getCharCodeSum(): number;
+}

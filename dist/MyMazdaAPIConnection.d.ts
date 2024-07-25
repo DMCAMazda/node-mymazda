@@ -1,0 +1,35 @@
+import { OptionsOfJSONResponseBody } from "got";
+export declare type RegionCode = "MNAO" | "MME" | "MJO";
+export default class MyMazdaAPIConnection {
+    private email;
+    private password;
+    private baseAPIDeviceID;
+    private usherAPIDeviceID;
+    private appCode;
+    private baseUrl;
+    private usherUrl;
+    private encKey?;
+    private signKey?;
+    private gotClient;
+    private accessToken?;
+    private accessTokenExpirationTs?;
+    private sensorDataBuilder;
+    constructor(email: string, password: string, region: RegionCode);
+    private getTimestampStrMs;
+    private getTimestampStr;
+    private getDecryptionKeyFromAppCode;
+    private getTemporarySignKeyFromAppCode;
+    private getSignFromTimestamp;
+    private getSignFromPayloadAndTimestamp;
+    private getPayloadSign;
+    private encryptPayloadUsingKey;
+    private encryptPasswordWithPublicKey;
+    private decryptPayloadUsingAppCode;
+    private decryptPayloadUsingKey;
+    apiRequest<ResponseType>(needsKeys: boolean, needsAuth: boolean, gotOptions: OptionsOfJSONResponseBody): Promise<ResponseType>;
+    apiRequestRetry<ResponseType>(needsKeys: boolean, needsAuth: boolean, gotOptions: OptionsOfJSONResponseBody, numRetries: number): Promise<ResponseType>;
+    private ensureKeysPresent;
+    private ensureTokenIsValid;
+    private retrieveKeys;
+    login(): Promise<void>;
+}
